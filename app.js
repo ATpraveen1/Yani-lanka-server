@@ -12,11 +12,11 @@ const UserFarmInventoryRoutes = require('./routes/UserFarmInventory');
 const UserProducedInventoryRoutes = require('./routes/UserProducedInventory');
 const ClientInventoryRoutes = require('./routes/ClientInvetory');
 const Billing = require('./routes/Billing');   
-    
-const app = express();     
+
+const app = express();
 const PORT = process.env.PORT || 8080 ;
-const allowedOrigins = ['http://localhost:3000',"https://yanilanka.netlify.app",'https://inventory-h9o9.onrender.com',"https://yanilanka1.netlify.app","https://yanilanka-acc.netlify.app"];
-// const allowedOrigins = ['http://localhost:3000'];
+// const allowedOrigins = ['http://localhost:3000',"https://yanilanka.netlify.app",'https://inventory-h9o9.onrender.com',"https://yanilanka1.netlify.app","https://yanilanka-acc.netlify.app"];
+const allowedOrigins = ['http://localhost:3000'];
  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({limit:"50mb"})); 
@@ -41,7 +41,7 @@ mongoose.connection.on("disconnected", () => {
 app.get('/',(req,res)=>{
   res.status(200).json({ message : 'Server Running Successfully' });
 })
- 
+
 
 // API Paths
 // User routes

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema({
           ClientDetails:{
-                   type:Object,
-                   required:true
+              type:Object,
+              required:true
             },
           BillNo:{
                 type:String,
