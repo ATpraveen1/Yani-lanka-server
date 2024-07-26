@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 const schema = new mongoose.Schema({
+    UserID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     ProductID: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     ProductName: {
         type: String,
@@ -13,10 +17,10 @@ const schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Price: {
+    Quantity: {
         type: Number,
         required: true
     },
 });
 
-module.exports = mongoose.model("FarmInventory", schema, "FarmInventory");
+module.exports = mongoose.model("UserFarmInventory", schema, "UserFarmInventory");

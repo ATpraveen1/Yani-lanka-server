@@ -1,11 +1,9 @@
 const express = require('express');
-
 const router = express.Router();
+const { createUserFarmInventory, GetUserFarmInventoryData, UpdateUserFarmInventory } = require('../Controllers/UserFarmInventory');
 
-const { createUserFarmInventory ,GetUserFarmInventoryData ,UpdateUserFarmINventory} =require('../Controllers/UserFarmInventory');
+router.post('/create-farm-inventory', createUserFarmInventory);
+router.get('/get-farm-data/:id', GetUserFarmInventoryData);
+router.post('/update-farm-inventory', UpdateUserFarmInventory);
 
-router.post('/create-farm-inventory',createUserFarmInventory);
-router.get('/get-farm-data/:id',GetUserFarmInventoryData);
-router.post('/update-farm-inventory',UpdateUserFarmINventory);
-
-module.exports = router ;
+module.exports = router;
